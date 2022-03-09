@@ -1,37 +1,17 @@
-// import logo from './logo.svg';
-import Heading from './Heading';
-import './App.css';
-import { useEffect, useState } from 'react';
+import IncreaseNum from "./Components/IncreaseNum";
+import ChangeColor from "./Components/ChangeColor";
+import Content from "./Components/Content";
 
 function App() {
-
-  const [post, setPost] = useState();
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then(json => setPost(json))
-  }, []);
-
-  //useEffect co [] => Se chi goi useE va call chay 1 lan
-  //useEffect co [gi do] => Se chay khi doi so trong [] thay doi
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Heading/>
-        {
-          post && (
-            post.map((item, index) => {
-              console.log(item);
-              return (
-                <p key={index}>{item.name}</p>
-              )
-            })
-          )
-        }
-      </header>
-    </div>
-  );
+    return (
+        <div className='App'>
+            <header className='App-header'>
+                <ChangeColor />
+                <IncreaseNum />
+                <Content />
+            </header>
+        </div>
+    );
 }
 
 export default App;

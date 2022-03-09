@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Heading() {
+function IncreaseNum() {
     const [ number, setNumber ] = useState(0);
     const handleNumber = () => {
         setNumber(number + 1);
@@ -14,4 +14,4 @@ function Heading() {
     );
 }
 
-export default Heading;
+export default IncreaseNum;
