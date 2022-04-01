@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+import { ThemeContext } from '../ThemeContext';
 
 const tabs = ['posts', 'comments', 'albums'];
 
 function Content() {
+    const context = useContext(ThemeContext);
     const [posts, setPosts] = useState([]); 
     const [type, setType] = useState('posts');
 
@@ -32,6 +34,7 @@ function Content() {
             }
             <ul
                 style={{listStyle: 'none'}}
+                className={context.theme}
             >
                 {
                     posts.map(post => (

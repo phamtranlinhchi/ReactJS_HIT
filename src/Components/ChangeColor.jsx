@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
 
 function ChangeColor() {
-    const [color, setColor] = useState('red');
+    const [color, setColor] = useState('');
 
     const handleColor = () => {
-        setColor('blue');
+        setColor('red');
     }
     return(
         <>
-            <p style={{color}}>This paragraph will change its color when you click the button</p>
+            <p style={{color}}>This paragraph will change to red when you click the button</p>
             <button onClick={handleColor}>Change</button>
         </>
     )
